@@ -62,7 +62,7 @@ fn capitalize(str: &str) -> String {
 /// Since CHAR_MAP contains characters from 'a' to 'z'
 /// we can index the right translation using ascii codes,
 /// that is, (char as u32) - 97
-fn find_translation<'a>(needle: char) -> Option<String> {
+fn find_translation(needle: char) -> Option<String> {
     let index = needle.to_ascii_lowercase() as usize;
     if index >= 97 && index < CHAR_MAP.len() + 97 {
         Some(CHAR_MAP[index - 97].1.to_string())
